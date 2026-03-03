@@ -19,7 +19,7 @@ export default function Home() {
       <Sidebar activeSection={activeSection} />
 
       <main className="lg:ml-[280px] pt-16 lg:pt-0">
-        <div className="max-w-4xl mx-auto px-6 py-12 space-y-24">
+        <div className="max-w-4xl mx-auto px-6 py-8 space-y-16">
           <HeroSection />
           <ProjectsSection />
           <ResearchSection />

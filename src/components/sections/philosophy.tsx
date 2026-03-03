@@ -31,24 +31,24 @@ export function PhilosophySection() {
     <section id="philosophy" className="scroll-mt-20">
       <FadeIn>
         <h2 className="font-serif text-2xl md:text-3xl mb-2">How I Work</h2>
-        <p className="text-text-muted mb-10">
+        <p className="text-sm text-text-muted mb-6">
           Lessons from 50+ experiments and 6 years of growth work.
         </p>
       </FadeIn>
 
-      <div className="space-y-8">
+      <div className="space-y-5">
         {PILLARS.map((pillar, i) => (
           <FadeIn key={pillar.title} delay={i * 100}>
-            <div className="bg-card rounded-2xl p-6 md:p-8">
-              <h3 className="font-serif text-xl text-accent mb-3">{pillar.title}</h3>
-              <p className="text-text-muted leading-relaxed">{pillar.description}</p>
+            <div className="bg-card rounded-xl p-5 md:p-6">
+              <h3 className="font-semibold text-lg text-accent mb-3">{pillar.title}</h3>
+              <p className="text-sm text-text-muted leading-relaxed">{pillar.description}</p>
 
               {pillar.title === "Cross-Functional Leadership" && (
                 <div className="mt-5 grid sm:grid-cols-2 gap-3">
                   {DISCIPLINES.map((d) => (
-                    <div key={d.role} className="bg-bg rounded-xl px-4 py-3">
+                    <div key={d.role} className="bg-bg rounded-lg px-4 py-3">
                       <p className="text-sm font-medium">{d.role}</p>
-                      <p className="text-xs text-text-muted mt-0.5">{d.challenge}</p>
+                      <p className="text-sm text-text-muted mt-0.5">{d.challenge}</p>
                     </div>
                   ))}
                 </div>

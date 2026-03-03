@@ -2,21 +2,15 @@
 
 import Link from "next/link";
 import { ArrowLeftIcon } from "@/components/icons";
-import { ProgressIndicator } from "./progress-indicator";
-import { useScrollspy } from "@/hooks/use-scrollspy";
 import { type ReactNode } from "react";
 
 interface CaseStudyLayoutProps {
   title: string;
   subtitle: string;
-  sections: { id: string; label: string }[];
   children: ReactNode;
 }
 
-export function CaseStudyLayout({ title, subtitle, sections, children }: CaseStudyLayoutProps) {
-  const sectionIds = sections.map((s) => s.id);
-  const activeSection = useScrollspy(sectionIds, 50);
-
+export function CaseStudyLayout({ title, subtitle, children }: CaseStudyLayoutProps) {
   return (
     <div className="min-h-screen">
       {/* Top bar */}
@@ -33,14 +27,12 @@ export function CaseStudyLayout({ title, subtitle, sections, children }: CaseStu
         </div>
       </header>
 
-      <ProgressIndicator sections={sections} activeSection={activeSection} />
-
-      <main className="pt-20 pb-24 px-6">
+      <main className="pt-18 pb-16 px-6">
         {/* Case study header */}
-        <div className="max-w-3xl mx-auto py-16 md:py-24">
-          <p className="text-sm text-accent font-medium uppercase tracking-wider mb-3">Case Study</p>
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-4">{title}</h1>
-          <p className="text-lg text-text-muted">{subtitle}</p>
+        <div className="max-w-3xl mx-auto py-5 md:py-6">
+          <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">Case Study</p>
+          <h1 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-3">{title}</h1>
+          <p className="text-sm text-text-muted leading-relaxed">{subtitle}</p>
         </div>
 
         <div className="divide-y divide-border">{children}</div>

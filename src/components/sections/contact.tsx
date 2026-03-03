@@ -23,7 +23,7 @@ export function ContactSection() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const res = await fetch("https://formspree.io/f/xzdanzjb", {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
@@ -43,22 +43,22 @@ export function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-20">
       <FadeIn>
-        <h2 className="font-serif text-2xl md:text-3xl mb-10">Let&apos;s Work Together</h2>
+        <h2 className="font-serif text-2xl md:text-3xl mb-6">Let&apos;s Work Together</h2>
       </FadeIn>
 
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-8">
         {/* Left — availability */}
         <FadeIn delay={100}>
           <div>
-            <p className="text-lg leading-relaxed mb-6">
-              I&apos;m available as a fractional growth and product leader. Let&apos;s talk if you need help with:
+            <p className="text-sm leading-relaxed mb-4">
+              I&apos;m available as a fractional or potentially as a full-time growth and product leader. Let&apos;s talk if you need help with:
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-6">
               {CONSULTING_AREAS.map((area) => (
                 <span
                   key={area}
-                  className="bg-card rounded-xl px-3 py-1.5 text-sm text-text-muted"
+                  className="bg-card rounded-lg px-3 py-1.5 text-sm text-text-muted"
                 >
                   {area}
                 </span>
@@ -115,7 +115,7 @@ export function ContactSection() {
 
         {/* Right — form */}
         <FadeIn delay={200}>
-          <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-6 space-y-4">
+          <form onSubmit={handleSubmit} className="bg-card rounded-xl p-5 space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1">
                 Name
@@ -125,7 +125,7 @@ export function ContactSection() {
                 id="name"
                 name="name"
                 required
-                className="w-full bg-bg border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
+                className="w-full bg-bg border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
               />
             </div>
             <div>
@@ -137,7 +137,7 @@ export function ContactSection() {
                 id="email"
                 name="email"
                 required
-                className="w-full bg-bg border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
+                className="w-full bg-bg border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
               />
             </div>
             <div>
@@ -149,13 +149,13 @@ export function ContactSection() {
                 name="message"
                 rows={5}
                 required
-                className="w-full bg-bg border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors resize-none"
+                className="w-full bg-bg border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors resize-none"
               />
             </div>
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-accent text-white rounded-xl px-6 py-3 text-sm font-medium hover:bg-accent-hover transition-colors disabled:opacity-50"
+              className="w-full bg-accent text-white rounded-lg px-6 py-3 text-sm font-medium hover:bg-accent-hover transition-colors disabled:opacity-50"
             >
               {status === "sending" ? "Sending..." : "Send message"}
             </button>
@@ -170,25 +170,6 @@ export function ContactSection() {
         </FadeIn>
       </div>
 
-      {/* Testimonials placeholder */}
-      <FadeIn delay={300}>
-        <div className="mt-16">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-4">
-            Testimonials
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {[1, 2].map((i) => (
-              <div
-                key={i}
-                className="border-2 border-dashed border-border rounded-2xl p-6 opacity-40"
-              >
-                <p className="text-sm italic text-text-muted">&ldquo;Quote from colleague or manager&rdquo;</p>
-                <p className="text-xs text-text-muted mt-3">&mdash; Name, Role at Company</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </FadeIn>
     </section>
   );
 }

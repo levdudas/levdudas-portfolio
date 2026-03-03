@@ -1,5 +1,5 @@
 import { FadeIn } from "@/components/fade-in";
-import { ExternalLinkIcon } from "@/components/icons";
+import { ExternalLinkIcon, GitHubIcon, LovableIcon, ReplitIcon } from "@/components/icons";
 
 interface Project {
   title: string;
@@ -8,6 +8,7 @@ interface Project {
   why: string;
   builtWith: string;
   link?: string;
+  linkIcon?: "github" | "lovable" | "replit";
   comingSoon?: boolean;
 }
 
@@ -19,22 +20,25 @@ const PROJECTS: Project[] = [
     why: "Wanted to bring our favorite party game online so we could play remotely too.",
     builtWith: "Lovable",
     link: "https://wine-taste-game.lovable.app",
+    linkIcon: "lovable",
   },
   {
-    title: "Coming soon",
-    emoji: "\uD83D\uDD27",
-    what: "New project in the works.",
-    why: "",
-    builtWith: "",
-    comingSoon: true,
+    title: "ScreenRelay",
+    emoji: "\uD83D\uDCBB",
+    what: "A macOS menu-bar app that lets you seamlessly switch which window is shared during video calls.",
+    why: "Tired of the clunky stop-share-reshare dance in virtual meetings every time I needed to show a different window.",
+    builtWith: "Claude Code",
+    link: "https://github.com/levdudas/SeemlessScreen-mac",
+    linkIcon: "github",
   },
   {
-    title: "Coming soon",
-    emoji: "\uD83D\uDCA1",
-    what: "Another idea brewing.",
-    why: "",
-    builtWith: "",
-    comingSoon: true,
+    title: "Pricing Page Anatomy",
+    emoji: "\uD83D\uDCB0",
+    what: "An interactive tutorial dissecting a SaaS pricing page — exploring monetization strategy and behavioral design patterns.",
+    why: "Wanted to turn years of pricing & packaging work into something tangible and educational.",
+    builtWith: "Replit",
+    link: "https://pricing-page-anatomy.replit.app",
+    linkIcon: "replit",
   },
 ];
 
@@ -42,18 +46,18 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="scroll-mt-20">
       <FadeIn>
-        <h2 className="font-serif text-2xl md:text-3xl mb-2">Weekend Experiments</h2>
-        <p className="text-text-muted mb-8">Side projects built to scratch an itch.</p>
+        <h2 className="font-serif text-2xl md:text-3xl mb-2">Weekend Projects</h2>
+        <p className="text-sm text-text-muted mb-6">Side projects built to scratch an itch.</p>
       </FadeIn>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {PROJECTS.map((project, i) => (
           <FadeIn key={project.title + i} delay={i * 100}>
             <div
-              className={`bg-card rounded-2xl p-6 h-full flex flex-col transition-all duration-300 ${
+              className={`bg-card rounded-xl p-5 h-full flex flex-col transition-all duration-300 ${
                 project.comingSoon
                   ? "opacity-50 border-2 border-dashed border-border"
-                  : "hover:bg-card-hover hover:shadow-md hover:-translate-y-0.5"
+                  : "hover:bg-card-hover hover:shadow-sm"
               }`}
             >
               <p className="text-2xl mb-3">{project.emoji}</p>
@@ -77,6 +81,9 @@ export function ProjectsSection() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
                       >
+                        {project.linkIcon === "github" && <GitHubIcon className="w-3.5 h-3.5" />}
+                        {project.linkIcon === "lovable" && <LovableIcon className="w-3.5 h-3.5" />}
+                        {project.linkIcon === "replit" && <ReplitIcon className="w-3.5 h-3.5" />}
                         Try it <ExternalLinkIcon className="w-3.5 h-3.5" />
                       </a>
                     )}

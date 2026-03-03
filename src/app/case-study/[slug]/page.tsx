@@ -25,7 +25,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   }
 
   return (
-    <CaseStudyLayout title={study.title} subtitle={study.subtitle} sections={study.sections}>
+    <CaseStudyLayout title={study.title} subtitle={study.subtitle}>
       {study.content}
     </CaseStudyLayout>
   );

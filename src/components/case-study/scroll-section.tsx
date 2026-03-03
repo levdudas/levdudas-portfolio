@@ -15,13 +15,13 @@ export function ScrollSection({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="min-h-[60vh] flex items-start py-16 md:py-24 scroll-mt-8">
+    <section id={id} className="py-5 md:py-6 scroll-mt-14">
       <FadeIn className="w-full max-w-3xl mx-auto">
-        <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">
+        <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">
           {label}
         </p>
-        <h2 className="font-serif text-2xl md:text-3xl mb-6">{title}</h2>
-        <div className="space-y-4 text-text-muted leading-relaxed">{children}</div>
+        <h2 className="font-serif text-xl md:text-2xl mb-4">{title}</h2>
+        <div className="space-y-3 text-sm text-text-muted leading-relaxed">{children}</div>
       </FadeIn>
     </section>
   );
