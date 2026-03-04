@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import "./globals.css";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${dmSans.variable} ${dmSerif.variable} antialiased`}>
         {children}
+        <Analytics />
         <ThemeSwitcher />
       </body>
     </html>
