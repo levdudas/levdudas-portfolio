@@ -3,20 +3,20 @@ import { DownloadIcon, ExternalLinkIcon } from "@/components/icons";
 
 const PROOF_POINTS = [
   {
-    metric: "~$1M",
-    subtitle: "incremental ARR each year proven by AB tests",
+    metric: "3M ARR",
+    subtitle: "incrementally, proven by AB tests",
   },
   {
-    metric: "6+ years",
-    subtitle: "SaaS: data \u2192 product",
+    metric: "7y in SaaS",
+    subtitle: "Data \u2192 Product",
   },
   {
     metric: "PhD",
     subtitle: "in Management Sciences, Summa cum laude",
   },
   {
-    metric: "100+",
-    subtitle: "AB tests shipped end-to-end",
+    metric: "100+ AB tests",
+    subtitle: "owned end-to-end",
   },
 ];
 
