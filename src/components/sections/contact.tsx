@@ -95,7 +95,7 @@ export function ContactSection() {
 
             <div className="flex flex-wrap gap-4 mt-6">
               <a
-                href="/resume/Resume_Levente_Dudas.pdf"
+                href="/resume/Levente_Dudas_Resume.pdf"
                 download
                 className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors"
               >
