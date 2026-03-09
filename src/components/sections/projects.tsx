@@ -17,7 +17,7 @@ const PROJECTS: Project[] = [
     title: "Wine Taste Game",
     emoji: "\uD83C\uDF77",
     what: "An online, customized version of a physical game to gamify wine tasting events with friends.",
-    why: "Wanted to bring our favorite party game online so we could play remotely too.",
+    why: "Wanted to bring our favorite party game online so we fully customize it each time.",
     builtWith: "Lovable",
     link: "https://wine-taste-game.lovable.app",
     linkIcon: "lovable",
