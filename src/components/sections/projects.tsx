@@ -46,7 +46,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="scroll-mt-20">
       <FadeIn>
-        <h2 className="font-serif text-2xl md:text-3xl mb-2">Weekend Projects</h2>
+        <h2 className="font-serif text-2xl md:text-3xl mb-2">Vibe Coding</h2>
         <p className="text-sm text-text-muted mb-6">Side projects built to scratch an itch.</p>
       </FadeIn>
 
